@@ -1,24 +1,19 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: mydeployment
-  labels:
-    app: myapp
-    tier: frontend
+  name: node-web
 spec:
- 
-  replicas: 3
-  selector:
+  replicas: 1
+  selector:     
     matchLabels:
-      tier: frontend
-  template:
+      app: node-web
+  template:    
     metadata:
       labels:
-        tier: frontend
+        app: node-web 
     spec:
       containers:
-      - name: mynode
-        image: armaansidhus224126633/6.1p
-        ports:
-        - containerPort: 8080
-          name: mynode
+        - name: node-web 
+          image: armaansidhus224126633/6.1p 
+          ports: 
+            - containerPort: 8080 

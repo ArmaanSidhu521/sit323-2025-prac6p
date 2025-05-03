@@ -9,7 +9,8 @@ spec:
   - name: mynode
     port: 80
     protocol: TCP
-    targetPort: mynode
+    targetPort: 8080 
+    nodePort: 31234
   selector:
     app: node-web
   type: NodePort
